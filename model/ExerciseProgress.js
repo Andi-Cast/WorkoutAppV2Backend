@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const exerciseProgressSchema = new mongoose.Schema({
     user: { 
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'User', required: true 
+        ref: 'User', 
+        required: true 
     }, // Reference to User model
     exerciseName: { 
         type: String, 
@@ -20,12 +21,7 @@ const exerciseProgressSchema = new mongoose.Schema({
     reps: { 
         type: Number, 
         required: true 
-    },
-    sets: { 
-        type: Number, 
-        required: true 
-    },
+    }
 });
 
-const ExerciseProgress = mongoose.model('ExerciseProgress', exerciseProgressSchema);
-module.exports = ExerciseProgress;
+module.exports = mongoose.model('ExerciseProgress', exerciseProgressSchema);
